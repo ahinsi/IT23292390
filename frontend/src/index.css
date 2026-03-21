@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Tailwind Colors Mapping */
+  --primary: #3498DB;
+  --primary-hover: #5DADE2;
+  --primary-bg: rgba(52, 152, 219, 0.15);
+  
+  --secondary: #34495E;
+  --secondary-bg: #ECF0F1;
+  
+  --success: #27AE60;
+  --success-bg: rgba(39, 174, 96, 0.15);
+  
+  --warning: #F59E0B;
+  --warning-bg: #FEF3C7;
+  
+  --error: #E74C3C;
+  --error-bg: rgba(231, 76, 60, 0.15);
+  
+  --background: #ECF0F1;
+  --surface: #FFFFFF;
+  
+  --sidebar-bg: #2C3E50;
+  --sidebar-text: #ECF0F1;
+  --sidebar-active: #FFFFFF;
+  
+  --text-main: #2C3E50;
+  --text-muted: #34495E;
+  
+  --border-color: #BDC3C7;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 10px 40px -10px rgba(0, 0, 0, 0.08); /* Very soft large shadow */
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem; /* Bubbly, modern rounding */
+  --radius-full: 9999px;
+  
+  --font-body: 'Inter', sans-serif;
+  --font-header: 'Poppins', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+[data-theme="dark"] {
+  --primary: #3498DB;
+  --primary-hover: #5DADE2;
+  --primary-bg: rgba(52, 152, 219, 0.15);
+  --success-bg: rgba(39, 174, 96, 0.15);
+  --error-bg: rgba(231, 76, 60, 0.15);
+  --background: #2C3E50;
+  --surface: #34495E;
+  --text-main: #ECF0F1;
+  --text-muted: #BDC3C7;
+  --border-color: #5DADE2;
+  --sidebar-bg: #1B2631;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.table-time {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  color: var(--primary);
+  background: var(--primary-bg);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+}
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  padding: 0.6rem 1.2rem; font-family: var(--font-body); font-weight: 500;
+  border-radius: var(--radius-sm); border: none; cursor: pointer; transition: all 0.2s ease;
+  font-size: 0.875rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px); box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+}
+
+.btn-outline {
+  background-color: transparent; border: 1px solid var(--border-color); color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background-color: var(--background); border-color: var(--text-muted);
+}
+
+.card {
+  background-color: var(--surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255,255,255,0.8);
+  overflow: hidden;
+}
+
+.input-field {
+  width: 100%; padding: 0.75rem 1rem; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color); background-color: var(--surface);
+  color: var(--text-main); font-family: var(--font-body); transition: all 0.2s;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.input-field:focus {
+  outline: none; border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-bg);
+}
+
+.badge {
+  display: inline-flex; align-items: center; padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+}
+
+.badge-blue { background: var(--primary-bg); color: var(--primary); }
+.badge-green { background: var(--success-bg); color: var(--success); }
+.badge-orange { background: var(--warning-bg); color: var(--warning); }
+.badge-red { background: var(--error-bg); color: var(--error); }
+.badge-gray { background: #F1F5F9; color: var(--text-muted); }
